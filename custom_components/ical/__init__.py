@@ -423,10 +423,11 @@ class ICalEvents:
             except Exception as e:
                 _LOGGER.error("Unable to parse indate: %s", str(e))
 
-        # FIX replace fucking up entries from Outlook 365        
+        # FIX replace fucking up entries from Outlook 365
         # indate_replaced = await self.hass.async_add_executor_job(
         #     self._date_replace, indate, timezone
         # )
+        indate_replaced = indate
 
         _LOGGER.debug("Out date: %s", str(indate_replaced))
         return indate_replaced
